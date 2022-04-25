@@ -1,0 +1,26 @@
+[
+  {
+    "nazev": "first",
+    "trivialni": 1,
+    "grafika": 5,
+    "pokrocile": 10
+  },
+  {
+    "nazev": "second",
+    "trivialni": 3,
+    "grafika": 7,
+    "pokrocile": 12
+  },
+  {
+    "nazev": "third",
+    "trivialni": 5,
+    "grafika": 9,
+    "pokrocile": 14
+  },
+  {
+    "nazev": "fourth",
+    "trivialni": 4,
+    "grafika": 8,
+    "pokrocile": 13
+  }
+]
