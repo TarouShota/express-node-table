@@ -1,30 +1,59 @@
-# React-Table app which reads .csv files
+## React-Table app which reads .csv files
+Used: JavaScript,React,HTML, CSS
 
 
-## How to run the project
+### How to start the back-end side 
 
-Install all of the dependancies first
+Change the directory to the back-end folder
 
-Check the yarn dependancies 
+```bash
+cd back-end
+```
 
-### `yarn check --verify-tree`
+ Install the required packages
+```bash
+npm install bootstrap csv-parse csv-stringify express fs multer nodemon
+```
 
- Check the node dependancies
 
-### `npm list`
+After installing all of the required dependencies
 
-After installing all of the required dependancies
+```bash
+npm run server
+```
 
-### Change directory to both of the folders
+The uploaded file is saved on the server and it is not connected to cloud storage
 
-### `cd back-end`
 
-### `npm run server`
 
-Open another terminal, and now cd to the frontend folder
+### How to run the frontend side
 
-### `cd frontend`
+Open another terminal
 
-### `npm start`
+
+ Change directory to the frontend folder
+
+```bash
+cd frontend
+```
+
+
+
+
+ Install all of the required dependancies 
+
+```bash
+npm install axios bootstrap csv-parse csv-parser http-proxy-middleware multer react-do react-router-dom
+```
+
+
+ After installing all of the required dependencies
+
+```bash
+npm start
+```
+
+
+ The csv data delimeter is -> `;`
 
 
