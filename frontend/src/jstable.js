@@ -7,7 +7,9 @@ import { Tabulator } from 'tabulator-tables';
 import { ReactTable } from './components/react-table';
 import { useTable } from 'react-table'
 
-
+require('react-dom');
+window.React2 = require('react');
+console.log(window.React1 === window.React2);
 export function ReadCsv() {
     const [tableRows, setTableRows] = useState([]);
 
