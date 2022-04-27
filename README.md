@@ -9,14 +9,14 @@ Change the directory to the back-end folder
 ```bash
 cd back-end
 ```
-
+<!-- 
  Install the required packages
 ```bash
 npm install bootstrap csv-parse csv-stringify express fs multer nodemon
 ```
 
 
-After installing all of the required dependencies
+After installing all of the required dependencies -->
 
 ```bash
 npm run server
@@ -39,7 +39,7 @@ cd frontend
 
 
 
-
+<!-- 
  Install all of the required dependancies 
 
 ```bash
@@ -47,7 +47,7 @@ npm install axios bootstrap csv-parse csv-parser http-proxy-middleware multer re
 ```
 
 
- After installing all of the required dependencies
+ After installing all of the required dependencies -->
 
 ```bash
 npm start
