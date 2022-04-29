@@ -1,3 +1,4 @@
 # dev dependencies
 
 .parcel-cache
+node_modules/
