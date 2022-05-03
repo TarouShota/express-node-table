@@ -1,5 +1,8 @@
 ## React-Table app which reads .csv files
-Used: JavaScript,React,HTML, CSS
+
+
+### Upload your .csv file with the ';' delimeter, edit it, export the new .csv file
+
 
 
 ### How to start the back-end side 
