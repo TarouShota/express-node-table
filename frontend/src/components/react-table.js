@@ -13,9 +13,7 @@ export function ReactTable(jsonArray) {
     /* The above code is creating a variable called rowData and assigning it to the window.rows. The
       window.rows is a global variable that is created in the HTML file. The window.rows is an array of
       objects that contains the row data. The row data is the data that is displayed in the first
-      column of the table. The row data is the data that is displayed in the first column of the table.
-      The row data is the data that is displayed in the first column of the table. The row data is the
-      data that is displayed in the first column of the table. The row */
+      column of the table. */
 
     let rowData = window.rows;
     let columnData = window.columns;
