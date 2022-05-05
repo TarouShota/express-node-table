@@ -16,18 +16,18 @@ const activeCell = {
 export function ReactTable(jsonArray) {
 
     // console.log(window.rows)
+    /* The above code is creating a variable called rowData and assigning it to the window.rows. The
+    window.rows is a global variable that is created in the HTML file. The window.rows is an array of
+    objects that contains the row data. The row data is the data that is displayed in the first
+    column of the table. The row data is the data that is displayed in the first column of the table.
+    The row data is the data that is displayed in the first column of the table. The row data is the
+    data that is displayed in the first column of the table. The row */
+
     let rowData = window.rows
     let columnData = window.columns
     let jsonStateArray = jsonArray.jsonArray
     let convertedArray = objectConverter(jsonStateArray);
-    // console.log(jsonStateArray);
 
-    // console.log(arrayToSend);
-    // console.log(rowData)
-    // console.log(window.dataCopy)
-
-
-    // console.log(jineObject)
 
     const [cellData, setCellData] = useState(convertedArray);
 
@@ -35,13 +35,15 @@ export function ReactTable(jsonArray) {
 
     const [totalHours, setTotalHours] = useState(0)
 
-    let finalJson = [];
+
+    /* Creating an object with the same keys as the convertedArray. */
 
     let jineObject = {}
     for (const key in convertedArray) {
         jineObject[key] = 0;
 
     }
+    /* Creating a state variable called value and setting it to the value of jineObject. */
     const [value, setValue] = useState(jineObject);
 
     /**
@@ -59,31 +61,7 @@ export function ReactTable(jsonArray) {
 
 
     };
-    const rateChange = (e) => {
-        setHourlyRate(e.target.value)
-    }
 
-    useEffect(() => {
-
-        console.log(value)
-    }, [])
-
-    // console.log(columnData)
-    // console.log(jsonRows.jsonRows);
-    // console.log(jsonRows.jsonColumns)
-    //e.target.value
-
-    useEffect(() => {
-        console.log(cellData);
-
-    }, [cellData])
-
-
-
-    // const onBlur = (name, columnIndex) => {
-
-    //     updateMyData(name, columnIndex, value);
-    // };
 
     /**
      * It takes a name and a columnIndex as arguments, and then updates the value of the cellData
@@ -132,40 +110,16 @@ export function ReactTable(jsonArray) {
         })
         togleState()
     }
-    // const newData = [];
-    // origData.forEach((actorObj) => {
-    //     actorObj.movies.forEach((movie) => {
-    //         newData.push({
-    //             ["actor"]: actorObj.actor,
-    //             movie: movie.namel
-    //         });
-    //     });
-    // });
-    /* A function that is called when the user clicks on a cell. It is supposed to change the value of the
-    cell. */
-    // const togleState = () => setCellData({
-    //     ...cellData,
-    //     [name]: {
-    //         ...cellData[name],
-    //         [columnIndex]: {
-    //             ...cellData[name][columnIndex],
-    //             value: e.target.value
-    //         }
-    //     }
-    // })
-    // togleState()
 
 
-
+    //using the React.use memo, so it would not cause unneccessary rerender
     let data = React.useMemo(() => rowData, []);
 
-    // console.log(data);
-
-    const testJson = ['nazev', 'trivialni', 'grafika', 'pokrocile', 'jine']
 
     /* Creating an array of objects. */
     let testColumns = []
 
+    /* Columns of the table */
     columnData.forEach((element, index) => {
         let testObj = {
             Header: element,
@@ -175,7 +129,7 @@ export function ReactTable(jsonArray) {
         testColumns.push(testObj)
     });
 
-    // console.log(testColumns)
+
 
     let columns = React.useMemo(
         () => testColumns,
@@ -189,9 +143,6 @@ export function ReactTable(jsonArray) {
         prepareRow
     } = useTable({ columns, data });
 
-    // function read(e, index, row) {
-    //     console.log(e);
-    // }
 
     /**
      * It returns a React element.
@@ -321,12 +272,6 @@ export function ReactTable(jsonArray) {
     };
 
 
-
-    // var fileTitle = "perfektniSplnil"; // or 'my-unique-title'
-
-    //exportCSVFile(headers, itemsFormatted, fileTitle);
-
-
     return (
         <>
             {/* <h1>Zap</h1> */}
@@ -367,9 +312,7 @@ export function ReactTable(jsonArray) {
                                         return (
                                             <td
                                                 rowSpan={cell.rowSpan}
-                                                // onClick={() =>
-                                                //     MudaObject(row.cells[0].value, cell.column.id)
-                                                // }
+
                                                 {...cell.getCellProps()}
                                                 style={activeCell}
                                             ><input style={{ width: '4rem' }}
@@ -382,7 +325,7 @@ export function ReactTable(jsonArray) {
                                                 }
                                             >
                                                 </input>
-                                                {/* {cell.render("Cell")} */}
+
                                             </td>
                                         );
 
@@ -390,8 +333,7 @@ export function ReactTable(jsonArray) {
                                     if (cellData[row.cells[0].value][cell.column.id].clicked == true) {
 
                                     }
-                                    // console.log(cell.column.id, row.cells[0].value)
-                                    // console.log(cell.column.Header)
+
                                     return (
                                         <td
                                             rowSpan={cell.rowSpan}
@@ -403,7 +345,7 @@ export function ReactTable(jsonArray) {
                                             style={(cellData[row.cells[0].value][cell.column.id].clicked) ? activeCell : borderStyle
                                             }
                                         >
-                                            {/* border: "3px solid #3D348B", backgroundColor: 'white', color: 'black', cursor: 'pointer' */}
+
                                             {cell.render("Cell")}
                                         </td>
                                     );
@@ -417,8 +359,7 @@ export function ReactTable(jsonArray) {
             <input style={{ marginBottom: '2rem' }} className='form-control' value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)} placeholder='hodinova sazba'></input>
 
             <button className='btn btn-success' onClick={createLastData}> Vypočíst</button>
-            {/* <button onClick={(e) => createLastData(e)}>
-                vypočíst</button> */}
+
 
             <br />
             <p style={{ marginTop: '0.5rem', opacity: 0.8 }}>export only after clicking 'vypočíst'</p>

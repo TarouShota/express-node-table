@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './components/tabulator';
 import { ReadCsv } from './jstable';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';

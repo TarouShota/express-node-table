@@ -7,10 +7,17 @@ import { Tabulator } from 'tabulator-tables';
 import { ReactTable } from './components/react-table';
 import { useTable } from 'react-table'
 
+/* Checking if the react version is the same. */
 require('react-dom');
 window.React2 = require('react');
 console.log(window.React1 === window.React2);
+
+/**
+ * It takes a CSV file, converts it into an array of objects, and then adds a new property to each
+ * object in the array.
+ */
 export function ReadCsv() {
+    /* A React hook that is used to store the values of the table. */
     const [tableRows, setTableRows] = useState([]);
 
     //State to store the values
@@ -20,9 +27,15 @@ export function ReadCsv() {
 
     let file = null;
     function fileInput(e) {
+        //setting the columns of the csv table
         file = e.target.files[0]
         // console.log(e.target.files[0]);
     }
+    /**
+     * It fetches a CSV file, in a json format, then converts it into an array of
+     * objects
+     *
+     */
     function submitFile() {
 
         let formData = new FormData()
@@ -50,16 +63,16 @@ export function ReadCsv() {
                         }
                         element.push("0")
                     })
-                    console.log(data[1], data);
+                    console.log(data[0], data);
                     
-                    
+                    //removing the first array from the object
                     let allArrays = data.slice(1, data.length);
 
                     setTableRows(data[0]);
                     setValues(allArrays);
 
-                    console.log(tableRows);
-                    console.log(values)
+                     /* Setting the columns of the table. */
+                    
                     window.columns = data[0]
                     /* Converting the array of arrays into an array of objects. */
                     window.rows = data.splice(1).map((arr) => {
@@ -86,32 +99,7 @@ export function ReadCsv() {
 
 
     }
-  function CreateTable() {
-        return (
-            <table className='table table-bordered table-dark'>
-                <thead>
-                    <tr>
-                        {tableRows.map((rows, index) => {
-                            return <th key={index}>{rows}</th>;
-                        })}
-                    </tr>
-                </thead>
-                <tbody>
-                    {values.map((value, index) => {
-                        return (
-                            <tr key={index}>
-                                {value.map((val, i) => {
-                                    return <td  key={i}>{val}</td>;
-                                })}
-
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        )
-    }
-
+ 
 
 
 
@@ -124,6 +112,7 @@ export function ReadCsv() {
             <button className="btn btn primary mt-2" id="submitFile" onClick={submitFile}>Přečíst</button>
             {/* <div className="mt-2" id="csvTable"></div> */}
             {(window.rows != undefined && window.columns) &&
+            
                 <ReactTable jsonArray={values} />
             }
 
