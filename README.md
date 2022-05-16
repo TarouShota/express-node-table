@@ -1,7 +1,7 @@
 ## React-Table app which reads .csv files
 
 
-https://user-images.githubusercontent.com/46716452/168608430-ec21c373-c333-47ee-96c4-6d664567b6cb.mp4
+<!-- https://user-images.githubusercontent.com/46716452/168608430-ec21c373-c333-47ee-96c4-6d664567b6cb.mp4 -->
 
 ![New Recording - 16_05_2022, 15_48_41-high](https://user-images.githubusercontent.com/46716452/168609006-8059d838-4a70-4e1f-bc43-e2ad6bf83ed3.gif)
 
